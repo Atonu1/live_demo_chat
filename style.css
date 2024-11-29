@@ -13,22 +13,33 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.8);
-    width: 400px;
-    height: 400px;
+    width: 500px; /* Increased width */
+    height: 600px; /* Increased height */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+}
+
+/* Styling for chat header */
+#chatHeader {
+    background-color: #2575fc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 /* Styling for message container */
 #messages {
     overflow-y: auto;
-    max-height: 300px;
+    max-height: 460px; /* Adjusted for new height */
     margin-bottom: 10px;
     padding-right: 10px;
+    padding-top: 10px;
 }
 
 /* Input field and button */
