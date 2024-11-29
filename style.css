@@ -1,6 +1,4 @@
-/* styles.css */
-
-/* Styling the chat container */
+/* Basic Styling for Chat Box */
 #chatBox {
     width: 400px;
     margin: 20px auto;
@@ -10,32 +8,31 @@
     background-color: #f9f9f9;
 }
 
-/* Messages area */
+/* Messages Section */
 #messages {
     height: 300px;
     overflow-y: auto;
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
+    background-color: #fff;
 }
 
-/* Input and button */
+/* Input Box & Send Button */
 #messageInput {
     width: 75%;
     padding: 10px;
     margin-right: 5px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 #sendButton {
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
     background-color: #007bff;
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
