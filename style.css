@@ -1,86 +1,84 @@
-/* General body styling */
+/* Global body styling */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
 }
 
-/* Styling for chat box */
+/* Styling for the chat box container */
 #chatBox {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
     width: 400px;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    height: 450px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
 
-/* Styling for message container */
-#messages {
-    overflow-y: auto;
-    max-height: 300px;
+/* Header styling */
+#chatHeader {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
     margin-bottom: 10px;
-    padding-right: 10px;
+}
+
+/* Messages area */
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    height: 250px;
 }
 
 /* Input field and button */
 #messageInput {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     width: 80%;
-    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
 #sendButton {
-    padding: 10px;
-    background-color: #2575fc;
+    background-color: #6200ea;
     color: white;
     border: none;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-#sendButton:hover {
-    background-color: #6a11cb;
-}
-
-/* Styling for user messages */
+/* Styling for user and bot messages */
 .userMessage {
-    text-align: left;
-    background-color: #d1ffd1;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px 0;
-    width: fit-content;
-    max-width: 70%;
-    transition: all 0.3s ease;
-}
-
-/* Styling for bot messages */
-.botMessage {
-    text-align: right;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 5px 0;
-    width: fit-content;
-    max-width: 70%;
-    transition: all 0.3s ease;
-}
-
-/* Styling for the random image */
-.randomImage {
-    max-width: 100px;
-    margin: 5px 0;
+    background-color: #c5cae9;
+    padding: 8px;
     border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    align-self: flex-start;
+    word-wrap: break-word;
+}
+
+.botMessage {
+    background-color: #e1bee7;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    align-self: flex-end;
+    word-wrap: break-word;
 }
