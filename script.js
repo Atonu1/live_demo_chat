@@ -1,20 +1,36 @@
-const messagesDiv = document.getElementById('messages');
-const messageInput = document.getElementById('messageInput');
-const sendButton = document.getElementById('sendButton');
+// script.js
 
-sendButton.addEventListener('click', () => {
-    const message = messageInput.value;
-    if (message.trim() !== '') {
-        addMessage('You', message);
-        // Add a response simulation (optional)
-        setTimeout(() => addMessage('Client', 'Thank you for your message!'), 1000);
-        messageInput.value = '';
+// Select elements
+const messageInput = document.getElementById("messageInput");
+const sendButton = document.getElementById("sendButton");
+const messages = document.getElementById("messages");
+
+// Function to send a message
+function sendMessage() {
+    const text = messageInput.value.trim(); // Get the input value
+    if (text !== "") {
+        // Create a new message div
+        const newMessage = document.createElement("div");
+        newMessage.textContent = `You: ${text}`;
+        newMessage.style.margin = "5px 0";
+        
+        // Append the message to the chatbox
+        messages.appendChild(newMessage);
+
+        // Clear the input field
+        messageInput.value = "";
+        messages.scrollTop = messages.scrollHeight; // Auto-scroll to bottom
     }
+}
+
+// Add event listener for button click
+sendButton.addEventListener("click", function() {
+    sendMessage();
 });
 
-function addMessage(sender, text) {
-    const messageElement = document.createElement('div');
-    messageElement.textContent = `${sender}: ${text}`;
-    messagesDiv.appendChild(messageElement);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight; // Auto-scroll
-}
+// Add event listener for pressing Enter to send message
+messageInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
