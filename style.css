@@ -1,56 +1,86 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     margin: 0;
+    padding: 0;
 }
 
+/* Styling for chat box */
 #chatBox {
-    width: 300px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
     height: 400px;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
+/* Styling for message container */
 #messages {
     overflow-y: auto;
-    flex-grow: 1;
+    max-height: 300px;
     margin-bottom: 10px;
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    padding-right: 10px;
 }
 
+/* Input field and button */
 #messageInput {
-    width: calc(100% - 20px);
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 80%;
+    font-size: 16px;
 }
 
 #sendButton {
     padding: 10px;
-    border: none;
-    background-color: #4CAF50;
+    background-color: #2575fc;
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
-    margin-top: 10px;
 }
 
 #sendButton:hover {
-    background-color: #45a049;
+    background-color: #6a11cb;
 }
 
-#messages div {
-    background-color: #e0e0e0;
-    padding: 8px;
+/* Styling for user messages */
+.userMessage {
+    text-align: left;
+    background-color: #d1ffd1;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    width: fit-content;
+    max-width: 70%;
+    transition: all 0.3s ease;
+}
+
+/* Styling for bot messages */
+.botMessage {
+    text-align: right;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    width: fit-content;
+    max-width: 70%;
+    transition: all 0.3s ease;
+}
+
+/* Styling for the random image */
+.randomImage {
+    max-width: 100px;
     margin: 5px 0;
     border-radius: 5px;
 }
