@@ -1,34 +1,28 @@
-// script.js
+// JS Code to handle message sending functionality
 
-// Select elements
 const messageInput = document.getElementById("messageInput");
 const sendButton = document.getElementById("sendButton");
 const messages = document.getElementById("messages");
 
 // Function to send a message
 function sendMessage() {
-    const text = messageInput.value.trim(); // Get the input value
+    const text = messageInput.value.trim();
     if (text !== "") {
-        // Create a new message div
         const newMessage = document.createElement("div");
-        newMessage.textContent = `You: ${text}`;
+        newMessage.textContent = `You: ${text}`; // Display the typed message
         newMessage.style.margin = "5px 0";
-        
-        // Append the message to the chatbox
-        messages.appendChild(newMessage);
-
-        // Clear the input field
-        messageInput.value = "";
-        messages.scrollTop = messages.scrollHeight; // Auto-scroll to bottom
+        messages.appendChild(newMessage); // Append the message
+        messageInput.value = ""; // Clear the input field
+        messages.scrollTop = messages.scrollHeight; // Scroll to the bottom
     }
 }
 
-// Add event listener for button click
+// Event listener for Send button
 sendButton.addEventListener("click", function() {
     sendMessage();
 });
 
-// Add event listener for pressing Enter to send message
+// Event listener for pressing Enter key
 messageInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         sendMessage();
